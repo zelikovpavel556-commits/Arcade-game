@@ -1,0 +1,1 @@
+/* Placeholder for games/clicker/game.js */
