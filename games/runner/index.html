@@ -1,1 +1,51 @@
-<!-- Placeholder for games/runner/index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>3D Sprint Runner</title>
+    <link rel="stylesheet" href="../../shared/style.css">
+    <style>
+        body { background: #090d16; color: #fff; font-family: sans-serif; text-align: center; touch-action: none; user-select: none; }
+        #canvas-box { position: relative; width: 800px; max-width: 100%; margin: 0 auto; }
+        canvas { border: 2px solid #334155; border-radius: 12px; background: #020617; box-shadow: 0 10px 30px rgba(0,0,0,0.8); width: 100%; }
+        
+        .controls-area {
+            display: flex; gap: 15px; max-width: 800px; margin: 15px auto; padding: 0 10px;
+        }
+        
+        .run-btn {
+            flex: 3; height: 90px; background: linear-gradient(135deg, #22c55e, #15803d);
+            border: 3px solid #4ade80; border-radius: 16px; color: #fff; font-size: 1.8rem;
+            font-weight: 900; cursor: pointer; text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            box-shadow: 0 6px 0 #166534; touch-action: manipulation;
+        }
+        .run-btn:active { transform: translateY(4px); box-shadow: 0 2px 0 #166534; }
+
+        .turbo-btn {
+            flex: 1; height: 90px; background: linear-gradient(135deg, #eab308, #ca8a04);
+            border: 3px solid #fde047; border-radius: 16px; color: #000; font-size: 1.2rem;
+            font-weight: 900; cursor: pointer; box-shadow: 0 6px 0 #854d0e; touch-action: manipulation;
+        }
+        .turbo-btn:active { transform: translateY(4px); box-shadow: 0 2px 0 #854d0e; }
+        .turbo-btn:disabled { opacity: 0.4; cursor: not-allowed; box-shadow: none; transform: none; }
+    </style>
+</head>
+<body class="game-body">
+    <div class="game-header">
+        <a href="../../index.html" class="btn-back">← В меню</a>
+        <h2>🏃 3D SPRINT CHAMPIONSHIP</h2>
+    </div>
+
+    <div id="canvas-box">
+        <canvas id="canvas" width="800" height="400"></canvas>
+    </div>
+
+    <div class="controls-area">
+        <button id="run-trigger" class="run-btn">БЕЖАТЬ! ⚡ (МУЛЬТИТАЧ)</button>
+        <button id="turbo-trigger" class="turbo-btn" disabled>ТУРБО 🔥</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
