@@ -2,36 +2,35 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>2.5D Procedural Runner Platformer</title>
     <link rel="stylesheet" href="../../shared/style.css">
     <style>
-        body { background: #0b0f19; color: #fff; font-family: sans-serif; text-align: center; }
-        #canvas-box { position: relative; width: 800px; margin: 0 auto; }
-        canvas { border: 2px solid #334155; border-radius: 12px; background: #020617; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
-        .hud-panel {
-            position: absolute; top: 15px; left: 15px; right: 15px;
-            display: flex; justify-content: space-between;
-            background: rgba(15, 23, 42, 0.85); padding: 10px 20px;
-            border-radius: 8px; border: 1px solid #334155; font-weight: bold; font-size: 1.1rem;
-        }
+        body { background: #0b0f19; color: #fff; font-family: sans-serif; text-align: center; touch-action: manipulation; }
+        #canvas-box { position: relative; width: 800px; max-width: 100%; margin: 0 auto; }
+        canvas { border: 2px solid #334155; border-radius: 12px; background: #020617; width: 100%; }
+        .touch-controls { display: flex; justify-content: space-between; max-width: 800px; margin: 15px auto; padding: 0 10px; }
+        .touch-btn { background: #1e293b; border: 2px solid #334155; color: #fff; font-size: 1.5rem; border-radius: 12px; width: 70px; height: 60px; display: flex; align-items: center; justify-content: center; user-select: none; }
+        .touch-btn:active { background: #38bdf8; color: #000; }
     </style>
 </head>
 <body class="game-body">
     <div class="game-header">
         <a href="../../index.html" class="btn-back">← В меню</a>
-        <h2>🏃 2.5D PROCEDURAL PLATFORMER</h2>
+        <h2>🏃 2.5D PLATFORMER</h2>
     </div>
 
     <div id="canvas-box">
-        <canvas id="canvas" width="800" height="450"></canvas>
-        <div class="hud-panel">
-            <div style="color: #38bdf8;">УРОВЕНЬ: <span id="lvl-val">1</span></div>
-            <div style="color: #eab308;">МОНЕТЫ: <span id="coins-val">0</span></div>
-            <div style="color: #22c55e;">РЕКОРД: <span id="record-val">0</span></div>
-        </div>
+        <canvas id="canvas" width="800" height="400"></canvas>
     </div>
-    <p class="controls-hint">A/D или Стрелки — Бег | W / Пробел — Прыжок | Прыгай на врагов сверху!</p>
+
+    <div class="touch-controls">
+        <div style="display:flex; gap:10px;">
+            <div class="touch-btn" id="btn-left">◀</div>
+            <div class="touch-btn" id="btn-right">▶</div>
+        </div>
+        <div class="touch-btn" id="btn-jump" style="width: 120px; background: #22c55e;">ПРОБЕЛ</div>
+    </div>
 
     <script src="game.js"></script>
 </body>
