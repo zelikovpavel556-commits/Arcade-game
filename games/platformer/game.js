@@ -1,0 +1,1 @@
+/* Placeholder for games/platformer/game.js */
