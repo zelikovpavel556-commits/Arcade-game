@@ -1,105 +1,50 @@
-/* Сброс стилей и базовые настройки */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
-
-body {
+/* Общие стили для страниц игр */
+.game-body {
     background-color: #0f172a;
-    color: #f8fafc;
-    min-height: 100vh;
+    color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
 }
 
-/* Шапка сайта */
-header {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 40px;
+.game-header {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
 }
 
-header h1 {
-    font-size: 2.5rem;
+.btn-back {
     color: #38bdf8;
-    text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
-    margin-bottom: 10px;
-}
-
-header p {
-    color: #94a3b8;
+    text-decoration: none;
+    font-weight: bold;
     font-size: 1.1rem;
 }
 
-/* Сетка карточек игр */
-.games-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-    width: 100%;
-    max-width: 1100px;
-}
-
-/* Карточка игры */
-.game-card {
+.game-box {
     background: #1e293b;
-    border: 1px solid #334155;
+    padding: 20px;
     border-radius: 16px;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.game-card:hover {
-    transform: translateY(-5px);
-    border-color: #38bdf8;
-    box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.2);
-}
-
-.game-card h2 {
-    font-size: 1.4rem;
-    color: #f1f5f9;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.game-card p {
-    color: #94a3b8;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-/* Кнопка "Играть" */
-.play-btn {
-    display: block;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     text-align: center;
-    background: linear-gradient(135deg, #0284c7, #2563eb);
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 12px 20px;
-    border-radius: 10px;
-    transition: background 0.2s ease, opacity 0.2s ease;
 }
 
-.play-btn:hover {
-    opacity: 0.9;
+canvas {
+    background: #000;
+    border-radius: 8px;
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
 }
 
-/* Подвал (Footer) */
-footer {
-    margin-top: auto;
-    padding-top: 40px;
-    color: #64748b;
+.controls-hint {
+    color: #94a3b8;
     font-size: 0.9rem;
+    margin-top: 10px;
 }
-/* Placeholder for shared/style.css */
