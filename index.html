@@ -1,70 +1,138 @@
-<!-- Placeholder for index.html --><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arcade Portal — Мини Игры</title>
-    <link rel="stylesheet" href="shared/style.css">
+    <title>Arcade Game Hub</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: #090d16;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 15px;
+        }
+        h1 {
+            font-size: 2.8rem;
+            color: #38bdf8;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        p.subtitle {
+            color: #9ca3af;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 1000px;
+        }
+        .game-card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .game-card:hover {
+            transform: translateY(-7px);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+        }
+        .game-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+        .game-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #f3f4f6;
+            margin-bottom: 10px;
+        }
+        .game-desc {
+            font-size: 0.9rem;
+            color: #9ca3af;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+        .btn-play {
+            background: #22c55e;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .game-card:hover .btn-play {
+            background: #16a34a;
+        }
+    </style>
 </head>
 <body>
+    <h1>🕹️ ARCADE GAME HUB</h1>
+    <p class="subtitle">Выбирай игру и врывайся в геймплей!</p>
 
-    <header>
-        <h1>🎮 Arcade Game Portal</h1>
-        <p>Выбирай игру и начинай играть прямо в браузере!</p>
-    </header>
-
-    <main class="games-grid">
-
-        <!-- 1. Кликер -->
-        <div class="game-card">
+    <div class="games-grid">
+        <a href="games/arcanoid/index.html" class="game-card">
             <div>
-                <h2>🖱️ Кликер</h2>
-                <p>Прокачивай скорость кликов, закупай авто-клики и набери рекордный счет!</p>
+                <div class="game-icon">🧱</div>
+                <div class="game-title">Арканоид Deluxe</div>
+                <div class="game-desc">Киберпанк-стиль, лазеры, боссы и мощные пауэр-апы.</div>
             </div>
-            <a href="games/clicker/index.html" class="play-btn">Играть</a>
-        </div>
+            <div class="btn-play">Играть</div>
+        </a>
 
-        <!-- 2. Шутер -->
-        <div class="game-card">
+        <a href="games/clicker/index.html" class="game-card">
             <div>
-                <h2>🎯 Космический Шутер</h2>
-                <p>Управляй кораблем, уворачивайся от астероидов и сбивай врагов.</p>
+                <div class="game-icon">💎</div>
+                <div class="game-title">Cyber Clicker</div>
+                <div class="game-desc">Прокачка, авто-фермы, скины сферы и эффекты клика.</div>
             </div>
-            <a href="games/shooter/index.html" class="play-btn">Играть</a>
-        </div>
+            <div class="btn-play">Играть</div>
+        </a>
 
-        <!-- 3. Платформер -->
-        <div class="game-card">
+        <a href="games/platformer/index.html" class="game-card">
             <div>
-                <h2>🏃 2D Платформер</h2>
-                <p>Прыгай по платформам, собирай монетки и дойди до финиша.</p>
+                <div class="game-icon">🏃</div>
+                <div class="game-title">2.5D Platformer</div>
+                <div class="game-desc">Бесконечные уровни, конвейеры и физика прыжков на врагов.</div>
             </div>
-            <a href="games/platformer/index.html" class="play-btn">Играть</a>
-        </div>
+            <div class="btn-play">Играть</div>
+        </a>
 
-        <!-- 4. Змейка -->
-        <div class="game-card">
+        <a href="games/snake/index.html" class="game-card">
             <div>
-                <h2>🐍 Классическая Змейка</h2>
-                <p>Собирай еду, расти и старайся не врезаться в свой собственный хвост.</p>
+                <div class="game-icon">🐍</div>
+                <div class="game-title">Змейка Deluxe</div>
+                <div class="game-desc">Классика с магазином скинов для змейки и яблок.</div>
             </div>
-            <a href="games/snake/index.html" class="play-btn">Играть</a>
-        </div>
+            <div class="btn-play">Играть</div>
+        </a>
 
-        <!-- 5. Ранер -->
-        <div class="game-card">
+        <a href="games/runner/index.html" class="game-card">
             <div>
-                <h2>🏎️ Бесконечный Ранер</h2>
-                <p>Уклоняйся от препятствий на высокой скорости. Проверь свою реакцию!</p>
+                <div class="game-icon">⚡</div>
+                <div class="game-title">3D Sprint Runner</div>
+                <div class="game-desc">Псевдо-3D Забег, ИИ-соперники и честный Мультитач!</div>
             </div>
-            <a href="games/runner/index.html" class="play-btn">Играть</a>
-        </div>
-
-    </main>
-
-    <footer>
-        <p>© 2026 Arcade Games. Сделано с любовью.</p>
-    </footer>
-
+            <div class="btn-play">Играть</div>
+        </a>
+    </div>
 </body>
 </html>
