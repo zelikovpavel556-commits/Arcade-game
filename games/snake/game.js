@@ -1,0 +1,1 @@
+/* Placeholder for games/snake/game.js */
