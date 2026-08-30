@@ -1,1 +1,51 @@
-<!-- Placeholder for games/snake/index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Snake Deluxe</title>
+    <link rel="stylesheet" href="../../shared/style.css">
+    <style>
+        body { background: #0b0f19; color: #fff; font-family: sans-serif; text-align: center; }
+        .snake-layout { display: flex; gap: 20px; max-width: 900px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+        canvas { border: 2px solid #334155; border-radius: 12px; background: #020617; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        .shop-panel { background: #1e293b; border-radius: 12px; padding: 15px; width: 280px; text-align: left; border: 1px solid #334155; }
+        .shop-section { margin-bottom: 15px; }
+        .shop-item { display: flex; justify-content: space-between; align-items: center; margin: 8px 0; background: #0f172a; padding: 8px 12px; border-radius: 6px; }
+        .btn-buy { background: #22c55e; color: #fff; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        .btn-buy:disabled { background: #475569; cursor: not-allowed; }
+    </style>
+</head>
+<body class="game-body">
+    <div class="game-header">
+        <a href="../../index.html" class="btn-back">← В меню</a>
+        <h2>🐍 КЛАССИЧЕСКАЯ ЗМЕЙКА</h2>
+    </div>
+
+    <div class="snake-layout">
+        <div>
+            <div style="font-size: 1.2rem; margin-bottom: 10px; color: #38bdf8;">
+                ОЧКИ: <span id="score">0</span> | РЕКОРД: <span id="high-score">0</span>
+            </div>
+            <canvas id="canvas" width="400" height="400"></canvas>
+            <p class="controls-hint">Стрелки или WASD — Управление</p>
+        </div>
+
+        <div class="shop-panel">
+            <h3 style="color: #eab308; margin-bottom: 10px;">🎨 Магазин Цветов</h3>
+            
+            <div class="shop-section">
+                <strong>Цвет Змейки:</strong>
+                <div id="snake-skins"></div>
+            </div>
+
+            <div class="shop-section">
+                <strong>Цвет Еды:</strong>
+                <div id="food-skins"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
