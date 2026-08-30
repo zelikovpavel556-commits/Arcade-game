@@ -1,1 +1,48 @@
-<!-- Placeholder for games/clicker/index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Clicker Deluxe</title>
+    <link rel="stylesheet" href="../../shared/style.css">
+    <style>
+        body { background: #090d16; color: #fff; font-family: 'Segoe UI', sans-serif; }
+        .clicker-layout { display: flex; gap: 20px; max-width: 1000px; margin: 0 auto; padding: 20px; flex-wrap: wrap; }
+        .main-click-zone { flex: 1; min-width: 300px; background: #111827; border-radius: 16px; padding: 20px; text-align: center; border: 1px solid #1f2937; }
+        .shop-zone { flex: 1; min-width: 320px; background: #111827; border-radius: 16px; padding: 20px; border: 1px solid #1f2937; max-height: 600px; overflow-y: auto; }
+        .shop-tab { display: flex; gap: 10px; margin-bottom: 15px; }
+        .tab-btn { flex: 1; padding: 8px; background: #1f2937; color: #fff; border: none; border-radius: 6px; cursor: pointer; }
+        .tab-btn.active { background: #38bdf8; color: #000; font-weight: bold; }
+        .upg-card { background: #1f2937; padding: 12px; margin-bottom: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #374151; }
+        .upg-btn { background: #22c55e; color: #fff; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: bold; }
+        .upg-btn:disabled { background: #4b5563; cursor: not-allowed; }
+        canvas { background: #030712; border-radius: 12px; cursor: pointer; border: 2px solid #1e293b; }
+    </style>
+</head>
+<body class="game-body">
+    <div class="game-header">
+        <a href="../../index.html" class="btn-back">← В меню</a>
+        <h2>💎 CYBER CLICKER DELUXE</h2>
+    </div>
+
+    <div class="clicker-layout">
+        <div class="main-click-zone">
+            <h1 id="score-display" style="font-size: 2.5rem; color: #38bdf8; margin-bottom: 5px;">0</h1>
+            <p style="color: #9ca3af;" id="cps-display">Очков в секунду: 0</p>
+            <canvas id="click-canvas" width="320" height="320"></canvas>
+            <p style="font-size: 0.85rem; color: #6b7280; margin-top: 10px;">Кликай по сфере, прокачивай производство и открывай стили!</p>
+        </div>
+
+        <div class="shop-zone">
+            <div class="shop-tab">
+                <button class="tab-btn active" onclick="switchTab('upgrades')">Улучшения</button>
+                <button class="tab-btn" onclick="switchTab('skins')">Скины</button>
+                <button class="tab-btn" onclick="switchTab('vfx')">Эффекты</button>
+            </div>
+            <div id="shop-content"></div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
